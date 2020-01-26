@@ -7,6 +7,7 @@
 for f in ?.*; do mv "$f" "0$f"; done
 
 # Renames each file in each sub-directory
+# Not nested, only one directory down 
 for D in *; do
   if [ -d "${D}" ]; then
     # echo $D   # your processing here
