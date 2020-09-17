@@ -14,3 +14,6 @@ for D in *; do
     cd "$D" && for f in ?.*; do mv "$f" "0$f"; done && cd ..
   fi
 done
+
+## TODO: A step deeper/nested!
+# How about doing this with NodeJS instead?
