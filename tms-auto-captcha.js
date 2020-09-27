@@ -6,7 +6,7 @@
 // @version      0.0
 // @description  Try to take over the world!
 // @author       Rabin
-// @match        https://tms*.nepsetms.com.np/login
+// @match        https://tms49.nepsetms.com.np/login
 // @grant        none
 // ==/UserScript==
 (() => {
@@ -15,9 +15,21 @@
 function check(changes, observer) {
     if(document.querySelector('#randomfield')) {
         observer.disconnect();
+
+        const motherShip=()=>{
         const captchaValue = document.querySelector('#randomfield').value 
         const captchaField = document.querySelector("#captchaEnter")
-        captchaField.value = captchaValue 
+        captchaField.value = captchaValue
+        captchaField.classList.remove('ng-untouched')
+        captchaField.classList.remove('ng-pristine')
+        captchaField.classList.remove('ng-invalid')
+
+        captchaField.classList.add('ng-dirty')
+        captchaField.classList.add('ng-valid')
+        captchaField.classList.add('ng-touched')
+        }
+        const refreshIcon = document.querySelector('a.refresh-icon')
+        refreshIcon.addEventListener('click', motherShip)
     }
 }
 
